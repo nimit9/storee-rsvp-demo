@@ -103,14 +103,12 @@ html, body {
   font-family: "DM Serif Display", Georgia, serif;
   font-size: 13px;
 }
-.storee-link-icon {
-  width: 11px;
-  height: 11px;
-  fill: none;
-  stroke: currentColor;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-width: 2;
+.storee-icon {
+  color: #f37aa3;
+  font-family: "DM Serif Display", Georgia, serif;
+  font-size: 12px;
+  font-style: normal;
+  line-height: 1;
 }
 
 /* Chat log */
