@@ -183,8 +183,11 @@ class ChatApp {
           <div class="who">
             <span class="name">Aanya & Dev</span>
           </div>
+          <a class="wa-dashboard-link" href="/dashboard" target="_blank" rel="noreferrer">Dashboard <span aria-hidden="true">↗</span></a>
         </div>
-        <div class="wa-log" id="wa-log"></div>
+        <div class="wa-log" id="wa-log">
+          <a class="storee-chat-badge" href="https://storeestudio.in" target="_blank" rel="noreferrer">Demo by Sto<span>ree</span></a>
+        </div>
         <div class="wa-controls" id="wa-controls"></div>
       </div>
     `;

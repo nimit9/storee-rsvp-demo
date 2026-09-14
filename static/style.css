@@ -69,6 +69,37 @@ html, body {
 .wa-header .who { display: flex; flex-direction: column; line-height: 1.25; }
 .wa-header .name { font-size: 16.5px; font-weight: 600; }
 .wa-header .status { font-size: 12.5px; opacity: .85; }
+.wa-dashboard-link {
+  margin-left: auto;
+  color: #fff;
+  border: 1px solid rgba(255,255,255,.38);
+  border-radius: 999px;
+  padding: 6px 9px;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.wa-dashboard-link:hover { background: rgba(255,255,255,.13); }
+
+.storee-chat-badge {
+  align-self: center;
+  margin: 2px 0 8px;
+  border-radius: 999px;
+  background: rgba(42,26,20,.82);
+  box-shadow: 0 1px 2px rgba(0,0,0,.16);
+  color: #fdf8f3;
+  font-size: 11px;
+  line-height: 1;
+  padding: 6px 12px;
+  text-decoration: none;
+}
+.storee-chat-badge span {
+  color: #f37aa3;
+  font-family: "DM Serif Display", Georgia, serif;
+  font-size: 13px;
+}
 
 /* Chat log */
 .wa-log {
