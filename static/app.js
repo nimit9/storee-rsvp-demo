@@ -186,7 +186,7 @@ class ChatApp {
           <a class="wa-dashboard-link" href="/dashboard" target="_blank" rel="noreferrer">Dashboard <span aria-hidden="true">↗</span></a>
         </div>
         <div class="wa-log" id="wa-log">
-          <a class="storee-chat-badge" href="https://storeestudio.in" target="_blank" rel="noreferrer">Demo by Sto<span>ree</span></a>
+          <a class="storee-chat-badge" href="https://storeestudio.in" target="_blank" rel="noreferrer">Demo by Sto<span>ree</span><svg class="storee-link-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3h7v7M21 3l-9 9"/><path d="M19 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h5"/></svg></a>
         </div>
         <div class="wa-controls" id="wa-controls"></div>
       </div>

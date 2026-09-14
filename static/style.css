@@ -84,6 +84,9 @@ html, body {
 .wa-dashboard-link:hover { background: rgba(255,255,255,.13); }
 
 .storee-chat-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
   align-self: center;
   margin: 2px 0 8px;
   border-radius: 999px;
@@ -99,6 +102,15 @@ html, body {
   color: #f37aa3;
   font-family: "DM Serif Display", Georgia, serif;
   font-size: 13px;
+}
+.storee-link-icon {
+  width: 11px;
+  height: 11px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2;
 }
 
 /* Chat log */
