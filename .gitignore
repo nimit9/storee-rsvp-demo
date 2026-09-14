@@ -1,0 +1,21 @@
+node_modules
+.wrangler
+.dev.vars
+.DS_Store
+
+# Build output — regenerate with `npm run build`.
+dist
+
+# The previous couple's photos, moved out of static/ so they stop shipping.
+# Kept on disk for reference but deliberately never committed.
+archive
+
+# Local tooling and settings, not part of the deliverable.
+.claude
+
+# D1 export snapshots — real guest PII, never committed.
+backups
+
+# Local handoff notes and design-review artifacts are not part of the public demo.
+HANDOFF.md
+.impeccable

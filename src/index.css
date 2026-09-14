@@ -1,0 +1,149 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --radius: 0.5rem;
+  /* Crisp cool-neutral surfaces — sober, not beige. */
+  --background: oklch(0.985 0.001 260);
+  --foreground: oklch(0.21 0.012 265);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.21 0.012 265);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.21 0.012 265);
+  /* Restrained plum-rose accent — one deliberate hue. */
+  --primary: oklch(0.5 0.14 358);
+  --primary-foreground: oklch(0.99 0.005 260);
+  --secondary: oklch(0.965 0.002 260);
+  --secondary-foreground: oklch(0.25 0.012 265);
+  --muted: oklch(0.965 0.002 260);
+  --muted-foreground: oklch(0.5 0.012 265);
+  --accent: oklch(0.965 0.002 260);
+  --accent-foreground: oklch(0.25 0.012 265);
+  --destructive: oklch(0.55 0.19 25);
+  --border: oklch(0.915 0.004 265);
+  /* Darker than --border on purpose. A control's boundary is information (WCAG
+     1.4.11 wants 3:1); a card's edge is decoration. At 0.915 inputs measured
+     1.29:1. This is 3.23:1 on card, 3.10:1 on the page. */
+  --input: oklch(0.65 0.004 265);
+  --ring: oklch(0.5 0.14 358);
+  /* L=0.52 not 0.56: the "Yes" mark is the most repeated data point in the
+     product and 0.56 measured 4.39:1 on card, just under AA. This is 5.19:1. */
+  --success: oklch(0.52 0.13 150);
+  --selection: oklch(0.5 0.14 358 / 18%);
+}
+
+.dark {
+  --background: oklch(0.17 0.006 265);
+  --foreground: oklch(0.96 0.003 260);
+  --card: oklch(0.208 0.008 265);
+  --card-foreground: oklch(0.96 0.003 260);
+  --popover: oklch(0.208 0.008 265);
+  --popover-foreground: oklch(0.96 0.003 260);
+  --primary: oklch(0.68 0.14 356);
+  --primary-foreground: oklch(0.17 0.01 265);
+  --secondary: oklch(0.26 0.008 265);
+  --secondary-foreground: oklch(0.96 0.003 260);
+  --muted: oklch(0.26 0.008 265);
+  --muted-foreground: oklch(0.7 0.012 265);
+  --accent: oklch(0.28 0.008 265);
+  --accent-foreground: oklch(0.96 0.003 260);
+  --destructive: oklch(0.7 0.17 22);
+  --border: oklch(1 0 0 / 10%);
+  /* 14% measured 1.52:1 against the dark card; 38% is 3.57:1. */
+  --input: oklch(1 0 0 / 38%);
+  --ring: oklch(0.68 0.14 356);
+  --success: oklch(0.7 0.14 155);
+  --selection: oklch(0.68 0.14 356 / 28%);
+}
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --font-display: "Fraunces", ui-serif, Georgia, serif;
+  --color-success: var(--success);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* The surfaces we didn't draw still carry the design: browser defaults for
+     selection, the caret and the scrollbar belong to no design system. */
+  ::selection {
+    background: var(--selection);
+  }
+  input,
+  textarea {
+    caret-color: var(--primary);
+  }
+  * {
+    scrollbar-color: var(--border) transparent;
+  }
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--border);
+    border: 2px solid transparent;
+    border-radius: 999px;
+    background-clip: content-box;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--muted-foreground);
+    background-clip: content-box;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-display);
+    font-optical-sizing: auto;
+  }
+  .tnum {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
