@@ -19,3 +19,4 @@ backups
 # Local handoff notes and design-review artifacts are not part of the public demo.
 HANDOFF.md
 .impeccable
+.vercel
